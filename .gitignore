@@ -1,0 +1,12 @@
+# unity
+_Builds/
+Temp/
+Library/
+obj/
+
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.DS_store

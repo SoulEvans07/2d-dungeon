@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
-	private static readonly int Swing = Animator.StringToHash("swing");
 	private Transform _transform;
 	private Animator _animator;
+	private PlayerInventory _inventory;
 
 	public Camera _camera;
 	private Vector3 mouse;
@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour {
 	private void Start() {
 		this._transform = GetComponent<Transform>();
 		this._animator = GetComponent<Animator>();
+		this._inventory = GetComponent<PlayerInventory>();
 		timer = 1f / attackSpeed;
 	}
 
@@ -29,12 +30,12 @@ public class PlayerAttack : MonoBehaviour {
 	private void FixedUpdate() {
 		Flip();
 		Rotate();
-		Attack();
+		Action();
 	}
 
-	private void Attack() {
+	private void Action() {
 		if (attack) {
-			this._animator.SetTrigger(Swing);
+			this._inventory.Use();
 			attack = false;
 			timer = 0;
 		}

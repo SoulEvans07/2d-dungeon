@@ -24,11 +24,4 @@ public class Sword : MonoBehaviour {
 				break;
 		}
 	}
-
-	private void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag(target)) {
-			Health enemy = other.GetComponent<Health>();
-			enemy.TakeHit(damage);
-		}
-	}
 }

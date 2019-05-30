@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Camera _camera;
 
 	private void Start() {
-		this._transform = GetComponent<Transform>();
+		this._transform = transform;
 		this._rigidbody = GetComponent<Rigidbody2D>();
 	}
 

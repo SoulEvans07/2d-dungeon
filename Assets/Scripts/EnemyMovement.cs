@@ -32,5 +32,6 @@ public class EnemyMovement : MonoBehaviour {
 
 	public void Stop() {
 		this.target = this._transform.position;
+		this.move = Vector3.zero;
 	}
 }
